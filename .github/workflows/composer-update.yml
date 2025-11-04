@@ -1,0 +1,75 @@
+name: Weekly Composer Update
+
+on:
+  schedule:
+    # Runs at 01:00 UTC every Sunday
+    - cron: '0 1 * * 0'
+  workflow_dispatch: # Allows manual triggering
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Detect PHP version
+        id: detect-php
+        run: |
+          PHP_VERSION="8.2"
+          
+          # Check .php-version file
+          if [ -f .php-version ]; then
+            PHP_VERSION=$(cat .php-version | tr -d '[:space:]')
+            echo "Detected PHP version from .php-version: $PHP_VERSION"
+          # Check composer.json
+          elif [ -f composer.json ]; then
+            COMPOSER_PHP=$(jq -r '.require.php // empty' composer.json | sed 's/[^0-9.]//g' | cut -d'.' -f1,2)
+            if [ ! -z "$COMPOSER_PHP" ]; then
+              PHP_VERSION="$COMPOSER_PHP"
+              echo "Detected PHP version from composer.json: $PHP_VERSION"
+            fi
+          fi
+          
+          echo "Using PHP version: $PHP_VERSION"
+          echo "version=$PHP_VERSION" >> $GITHUB_OUTPUT
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ steps.detect-php.outputs.version }}
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, json, mbstring, pdo
+          coverage: none
+      
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      
+      - name: Run composer update
+        run: composer update -W
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: weekly composer update'
+          title: 'Weekly Composer Update'
+          body: |
+            Automated composer update run on {{ date | date('Y-m-d') }}.
+            
+            Please review the changes and merge if tests pass.
+          branch: composer-update-${{ github.run_number }}
+          delete-branch: true
+          labels: dependencies
