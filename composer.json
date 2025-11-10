@@ -1,4 +1,5 @@
 {
+    "name": "master-ghd/symfony7-skeleton-webpack"
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
