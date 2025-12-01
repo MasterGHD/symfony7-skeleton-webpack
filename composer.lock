@@ -6820,6 +6820,9 @@
                 "composer/semver": "^3.4",
                 "composer/xdebug-handler": "^3.0.5",
                 "ext-filter": "*",
+              
+              
+              
                 "ext-hash": "*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
