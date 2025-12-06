@@ -23,13 +23,37 @@ A modern Symfony 7 application skeleton with Webpack integration for asset manag
 
 ## Installation
 
+### Option 1: Clone the repository
+
 1. Clone the repository:
 ```bash
 git clone [repository-url]
 cd symfony7-skeleton-webpack
 ```
 
-2. Install PHP dependencies:
+### Option 2: Using Composer
+
+Create a new project using Composer:
+
+```bash
+composer create-project master-ghd/symfony7-skeleton-webpack ./symfony7-skeleton-webpack
+```
+
+OR using Symfony CLI:
+
+```bash
+symfony composer create-project master-ghd/symfony7-skeleton-webpack ./symfony7-skeleton-webpack
+```
+
+Then navigate to the project directory:
+
+```bash
+cd symfony7-skeleton-webpack
+```
+
+### Complete the setup
+
+2. Install PHP dependencies (if not already installed):
 ```bash
 composer install
 ```
