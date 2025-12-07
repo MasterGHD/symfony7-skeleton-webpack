@@ -10,7 +10,7 @@
         "ext-iconv": "*",
         "doctrine/dbal": "^3.10.4",
         "doctrine/doctrine-bundle": "^2.18.1",
-        "doctrine/doctrine-fixtures-bundle": "^4.3",
+        "doctrine/doctrine-fixtures-bundle": "^4.3.1",
         "doctrine/doctrine-migrations-bundle": "^3.7",
         "doctrine/orm": "^3.5.8",
         "phpdocumentor/reflection-docblock": "^5.6.5",
@@ -31,7 +31,7 @@
         "symfony/twig-bundle": "7.4.*",
         "symfony/ux-icons": "^2.31",
         "symfony/validator": "7.4.*",
-        "symfony/webpack-encore-bundle": "^2.3",
+        "symfony/webpack-encore-bundle": "^2.4",
         "symfony/yaml": "7.4.*"
     },
     "config": {
@@ -127,13 +127,13 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.24.1",
-        "friendsofphp/php-cs-fixer": "^3.91.0",
-        "phpunit/phpunit": "^12.4.4",
-        "rector/rector": "^2.2.9",
+        "friendsofphp/php-cs-fixer": "^3.91.3",
+        "phpunit/phpunit": "^12.5.1",
+        "rector/rector": "^2.2.11",
         "symfony/browser-kit": "7.4.*",
         "symfony/css-selector": "7.4.*",
         "symfony/debug-bundle": "7.4.*",
-        "symfony/maker-bundle": "^1.65",
+        "symfony/maker-bundle": "^1.65.1",
         "symfony/monolog-bundle": "^3.11",
         "symfony/stopwatch": "7.4.*",
         "symfony/web-profiler-bundle": "7.4.*"
