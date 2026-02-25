@@ -1,10 +1,10 @@
-# Symfony 7 Skeleton with Webpack
+# Symfony 8 Skeleton with Webpack
 
-A modern Symfony 7 application skeleton with Webpack integration for asset management.
+A modern Symfony 8 application skeleton with Webpack integration for asset management.
 
 ## Features
 
-- Symfony 7.x framework
+- Symfony 8.x framework
 - Webpack 5 for asset management
 - SASS/SCSS support
 - Modern JavaScript (ES6+) support
@@ -36,19 +36,19 @@ cd symfony7-skeleton-webpack
 Create a new project using Composer:
 
 ```bash
-composer create-project master-ghd/symfony7-skeleton-webpack ./symfony7-skeleton-webpack
+composer create-project master-ghd/symfony8-skeleton-webpack ./symfony8-skeleton-webpack
 ```
 
 OR using Symfony CLI:
 
 ```bash
-symfony composer create-project master-ghd/symfony7-skeleton-webpack ./symfony7-skeleton-webpack
+symfony composer create-project master-ghd/symfony8-skeleton-webpack ./symfony8-skeleton-webpack
 ```
 
 Then navigate to the project directory:
 
 ```bash
-cd symfony7-skeleton-webpack
+cd symfony8-skeleton-webpack
 ```
 
 ### Complete the setup

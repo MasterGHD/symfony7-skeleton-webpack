@@ -1,4 +1,4 @@
-# Makefile for Symfony 7 Project (WSL2 Compatible)
+# Makefile for Symfony 8 Project (WSL2 Compatible)
 # Usage: make [target]
 
 .PHONY: help install update serve stop build watch dev clear cache-clear db-create db-migrate db-fixtures test lint fix check deploy
@@ -8,7 +8,7 @@
 
 ## —— 🎯 Symfony Makefile ——————————————————————————————————————
 help: ## Show this help message
-	@echo "Symfony 7 + Tailwind CSS + DaisyUI Project"
+	@echo "Symfony 8 + Tailwind CSS + DaisyUI Project"
 	@echo ""
 	@echo "Usage: make [target]"
 	@echo ""
