@@ -36,19 +36,19 @@ cd symfony7-skeleton-webpack
 Create a new project using Composer:
 
 ```bash
-composer create-project master-ghd/symfony8-skeleton-webpack ./symfony8-skeleton-webpack
+composer create-project master-ghd/symfony-skeleton-webpack ./symfony-skeleton-webpack
 ```
 
 OR using Symfony CLI:
 
 ```bash
-symfony composer create-project master-ghd/symfony8-skeleton-webpack ./symfony8-skeleton-webpack
+symfony composer create-project master-ghd/symfony-skeleton-webpack ./symfony-skeleton-webpack
 ```
 
 Then navigate to the project directory:
 
 ```bash
-cd symfony8-skeleton-webpack
+cd symfony-skeleton-webpack
 ```
 
 ### Complete the setup
